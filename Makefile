@@ -1,5 +1,8 @@
 
+.PHONY : default rebuild install all html publish run
+
 default: rebuild
+
 
 # --- Building: --------------------------------------------------------------
 
@@ -44,6 +47,19 @@ $(JS_OUT) : $(JS_TMP)
 html: $(CSS_OUT) $(JS_OUT)
 	jekyll
 
+
+# --- Publishing: ------------------------------------------------------------
+
+RSYNC_OPTS = -hrlpt --stats
+RSYNC_TARGET_FILE = rsync.target
+RSYNC_TARGET = $(shell cat ${RSYNC_TARGET_FILE})
+
+publish: rebuild
+ifeq ($(strip $(RSYNC_TARGET)),)
+	$(error "Please specify RSYNC_TARGET value or add an rsync.target file.")
+else
+	rsync $(RSYNC_OPTS) _site/ $(RSYNC_TARGET)
+endif
 
 # --- Main rules: ------------------------------------------------------------
 
