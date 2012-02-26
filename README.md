@@ -16,6 +16,8 @@ $ make
 $ make run
 ```
 
+Then open <http://localhost:4000/> in your browser.
+
 ### Requirements
 
 - [Jekyll](http://jekyllrb.com/)
