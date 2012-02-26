@@ -1,0 +1,6 @@
+exclude:
+    - Makefile
+    - README.md
+    - LICENSE.txt
+    - css
+    - js

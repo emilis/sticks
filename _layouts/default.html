@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% capture timestamp %}{{ site.time | date_to_xmlschema }}{% endcapture %}
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+        <title>{{ page.title }}</title>
+        <link rel="stylesheet" type="text/css" href="/static/default.css?{{ timestamp }}">
+        <script src="/static/default.js?{{ timestamp }}"></script>
+    </head>
+    <body>
+        <div class="content" style="margin-top: 40px">
+            <div class="row">
+                <div class="span4 offset4">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

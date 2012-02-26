@@ -1,0 +1,5 @@
+*.swp
+_site/*
+static/default.*
+static/css/default.css
+static/js/default.js
