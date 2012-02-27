@@ -4,13 +4,13 @@ Some building material for web apps.
 
 ## Usage
 
-- Compile HTML files into `_site`:
+**Compile HTML files into `_site`:**
 
 ```
 $ make
 ```
 
-- Run a stand-alone server:
+**Run a stand-alone server:**
 
 ```
 $ make run
