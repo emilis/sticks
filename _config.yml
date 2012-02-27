@@ -2,5 +2,6 @@ exclude:
     - Makefile
     - README.md
     - LICENSE.txt
+    - rsync.target
     - css
     - js
