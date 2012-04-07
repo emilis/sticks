@@ -1,5 +1,5 @@
 
-.PHONY : default rebuild install all html deploy run
+.PHONY : default rebuild install all html deploy push run
 
 default: rebuild
 
@@ -60,6 +60,10 @@ ifeq ($(strip $(RSYNC_TARGET)),)
 else
 	rsync $(RSYNC_OPTS) _site/ $(RSYNC_TARGET)
 endif
+
+
+push:	rebuild
+	git push
 
 # --- Main rules: ------------------------------------------------------------
 
